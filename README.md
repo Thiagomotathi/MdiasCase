@@ -1,16 +1,32 @@
-Hahaha, verdade! O interpretador do chat acaba renderizando os títulos e as linhas em vez de mostrar o texto puro para você copiar. Vamos resolver isso agora mesmo.
-Aqui está o conteúdo completo e formatado dentro de um bloco de código protegido. É só clicar no botão de copiar no canto superior direito do bloco abaixo e colar direto no seu arquivo README.md:
-# 🛠️ Case 2: Ciência de Dados - Manutenção Preditiva
+# 🏭 Case M. Dias Branco — Ciência de Dados
 
-Este projeto foi desenvolvido como parte do processo seletivo para a vaga de Estágio na **M. Dias Branco**. O objetivo principal é construir um modelo de Machine Learning capaz de prever falhas em máquinas industriais com base em dados de sensores, minimizando paradas não planejadas na linha de produção.
+Cases técnicos do processo seletivo de Estágio na **M. Dias Branco**: Análise Exploratória de Dados e Manutenção Preditiva com Machine Learning.
+
+**Stack:** Python 3.12+ · Pandas · NumPy · Matplotlib · Seaborn · Scikit-Learn
 
 ---
 
-## 📌 Contexto de Negócio
+## 📊 Case 1: Análise Exploratória (EDA)
 
-Na indústria alimentícia, a parada inesperada de uma linha de produção gera altos custos com manutenção corretiva, além do desperdício de matéria-prima que fica retida nas esteiras. 
+Investigação da base de dados de sensores industriais para extrair insights antes da modelagem:
 
-Este modelo foi desenhado para atuar de forma **preventiva**, acionando a equipe de manutenção mecânica e elétrica com alta assertividade antes que a quebra ocorra.
+- Estatísticas descritivas dos sensores de temperatura, pressão e vibração
+- Estudo de correlação entre horas de funcionamento, temperatura e pressão
+- Descoberta do desbalanceamento: falhas representam apenas **4,2%** dos registros — insight que guiou a estratégia do Case 2
+- Visualizações com histogramas e diagramas de dispersão por tipo de máquina
+
+---
+
+## 🛠️ Case 2: Manutenção Preditiva
+
+Modelo de ML para prever falhas em máquinas industriais e evitar paradas não planejadas na linha de produção.
+
+**Pipeline** (`02_manutencao_preditiva.ipynb`):
+
+1. Imputação de NaN em `temperatura_celsius` e `pressao_psi` pela mediana
+2. One-Hot Encoding da variável `tipo_maquina`
+3. Split 80/20 com amostragem estratificada (`stratify=y`)
+4. **Random Forest** com `class_weight='balanced'`
 
 ---
 
